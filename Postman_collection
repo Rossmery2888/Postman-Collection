@@ -20,7 +20,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"firstName\": \"Juan\",\r\n    \"lastName\": \"Pérez\",\r\n    \"dni\": \"12345678\",\r\n    \"email\": \"juan@email.com\",\r\n    \"phone\": \"123456789\"\r\n}",
+									"raw": "{\r\n    \"firstName\": \"Juan\",\r\n    \"lastName\": \"Pérez\",\r\n    \"dni\": \"44802882\",\r\n    \"email\": \"juan@email.com\",\r\n    \"phone\": \"123456789\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -49,7 +49,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"firstName\": \"Juan\",\r\n    \"lastName\": \"Pérez\",\r\n    \"dni\": \"12345678\",\r\n    \"email\": \"juan@email.com\",\r\n    \"phone\": \"123456789\"\r\n}",
+									"raw": "{\r\n    \"businessName\": \"Global IT\",\r\n    \"ruc\": \"12345678901\",\r\n    \"businessType\": \"SAC\",\r\n    \"email\": \"global@email.com\",\r\n    \"phone\": \"987654321\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -57,7 +57,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8587/customers/personal",
+									"raw": "http://localhost:8587/customers/business",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -65,7 +65,7 @@
 									"port": "8587",
 									"path": [
 										"customers",
-										"personal"
+										"business"
 									]
 								}
 							},
@@ -120,14 +120,15 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8587/customers",
+									"raw": "http://localhost:8587/customers/67ae27808aa8db40efcab928",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "8587",
 									"path": [
-										"customers"
+										"customers",
+										"67ae27808aa8db40efcab928"
 									]
 								}
 							},
@@ -151,14 +152,16 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8587/customers",
+									"raw": "http://localhost:8587/customers/type/PERSONAL",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "8587",
 									"path": [
-										"customers"
+										"customers",
+										"type",
+										"PERSONAL"
 									]
 								}
 							},
@@ -182,14 +185,49 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8587/customers",
+									"raw": "http://localhost:8587/customers/type/BUSINESS",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "8587",
 									"path": [
-										"customers"
+										"customers",
+										"type",
+										"BUSINESS"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/customers/document/{documentNumber}",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Juan\",\r\n    \"lastName\": \"Pérez\",\r\n    \"dni\": \"12345678\",\r\n    \"email\": \"juan@email.com\",\r\n    \"phone\": \"123456789\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8587/customers/document/12345670",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8587",
+									"path": [
+										"customers",
+										"document",
+										"12345670"
 									]
 								}
 							},
@@ -202,7 +240,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"firstName\": \"Juan\",\r\n    \"lastName\": \"Pérez\",\r\n    \"dni\": \"12345678\",\r\n    \"email\": \"juan@email.com\",\r\n    \"phone\": \"123456789\"\r\n}",
+									"raw": "{\r\n    \"firstName\": \"Maria\",\r\n    \"lastName\": \"Pérez\",\r\n    \"dni\": \"12345678\",\r\n    \"email\": \"maria@email.com\",\r\n    \"phone\": \"123456789\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -210,12 +248,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/customers/personal/67ae27808aa8db40efcab928",
+									"raw": "http://localhost:8587/customers/personal/67ae27808aa8db40efcab928",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "8080",
+									"port": "8587",
 									"path": [
 										"customers",
 										"personal",
@@ -226,9 +264,39 @@
 							"response": []
 						},
 						{
-							"name": "api/customers/customers/bussinessl/{id}",
+							"name": "api/customers/customers/personal/{id} Copy",
 							"request": {
 								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Maria\",\r\n    \"lastName\": \"Pérez\",\r\n    \"dni\": \"12345678\",\r\n    \"email\": \"maria@email.com\",\r\n    \"phone\": \"123456789\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8587/customers/personal/67ae27808aa8db40efcab928",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8587",
+									"path": [
+										"customers",
+										"personal",
+										"67ae27808aa8db40efcab928"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/customers/customers/{id}",
+							"request": {
+								"method": "DELETE",
 								"header": [],
 								"body": {
 									"mode": "raw",
@@ -240,16 +308,133 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/customers/personal/67ae27808aa8db40efcab928",
+									"raw": "http://localhost:8587/customers/67b34ea3059de520868ca47c",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "8080",
+									"port": "8587",
 									"path": [
 										"customers",
-										"personal",
-										"67ae27808aa8db40efcab928"
+										"67b34ea3059de520868ca47c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/customers/personal-vip  cliente VIP",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Juan\",\r\n    \"lastName\": \"Pérez\",\r\n    \"dni\": \"45678711\",\r\n    \"email\": \"juan.perez@example.com\",\r\n    \"phone\": \"987654321\",\r\n    \"hasCreditCard\": true,\r\n    \"monthlyAverageBalance\": 2500.00\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8587/customers/personal-vip",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8587",
+									"path": [
+										"customers",
+										"personal-vip"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/customers/business-pyme cliente PYME",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"businessName\": \"Mi Empresa PYME SAC\",\r\n    \"ruc\": \"20123456789\",\r\n    \"businessType\": \"Servicios\",\r\n    \"email\": \"contacto@miempresa.com\",\r\n    \"phone\": \"987654321\",\r\n    \"hasCreditCard\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8587/customers/business-pyme",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8587",
+									"path": [
+										"customers",
+										"business-pyme"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/customers/customers/personal-vip/{id}",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"businessName\": \"Marcketing\",\r\n    \"ruc\": \"12345678903\",\r\n    \"businessType\": \"SAC\",\r\n    \"email\": \"marcketing@email.com\",\r\n    \"phone\": \"987654321\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8587/customers/business/67ae28a18aa8db40efcab929",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8587",
+									"path": [
+										"customers",
+										"business",
+										"67ae28a18aa8db40efcab929"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/customers/customers/business-pyme/{id}",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"businessName\": \"Marcketing\",\r\n    \"ruc\": \"12345678903\",\r\n    \"businessType\": \"SAC\",\r\n    \"email\": \"marcketing@email.com\",\r\n    \"phone\": \"987654321\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8587/customers/business/67ae28a18aa8db40efcab929",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8587",
+									"path": [
+										"customers",
+										"business",
+										"67ae28a18aa8db40efcab929"
 									]
 								}
 							},
@@ -373,7 +558,7 @@
 							"response": []
 						},
 						{
-							"name": "api/accounts//{accountId}/deposit",
+							"name": "api/accounts/{accountId}/deposit",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -404,12 +589,21 @@
 							"response": []
 						},
 						{
-							"name": "api/accounts/accountId}/withdraw",
+							"name": "api/accounts/{accountId}/withdraw",
 							"request": {
 								"method": "POST",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"amount\": 200.00\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "http://localhost:8588/api/accounts/accountId}/withdraw",
+									"raw": "http://localhost:8588/api/accounts/67ae6adf20d2ef49ce9052d2/withdraw",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -418,7 +612,7 @@
 									"path": [
 										"api",
 										"accounts",
-										"accountId}",
+										"67ae6adf20d2ef49ce9052d2",
 										"withdraw"
 									]
 								}
@@ -451,6 +645,180 @@
 										"accounts",
 										"67ae6b2120d2ef49ce9052d3",
 										"signers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/accounts/savings VIP",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"customerId\": \"C001\",\r\n    \"customerProfile\": \"VIP\",\r\n    \"balance\": 2000.00,\r\n    \"monthlyTransactionLimit\": 20,\r\n    \"hasRequiredCreditCard\": true,\r\n    \"minimumDailyBalance\": 1000.00\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8588/api/accounts/savings",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8588",
+									"path": [
+										"api",
+										"accounts",
+										"savings"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/accounts/checking PYME",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"customerId\": \"C002\",\r\n    \"customerProfile\": \"PYME\",\r\n    \"balance\": 5000.00,\r\n    \"maintenanceFee\": 0.00,\r\n    \"hasRequiredCreditCard\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8588/api/accounts/checking",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8588",
+									"path": [
+										"api",
+										"accounts",
+										"checking"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/accounts/savings REGULAR",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"customerId\": \"C002\",\r\n    \"customerProfile\": \"PYME\",\r\n    \"balance\": 5000.00,\r\n    \"maintenanceFee\": 0.00,\r\n    \"hasRequiredCreditCard\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8588/api/accounts/checking",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8588",
+									"path": [
+										"api",
+										"accounts",
+										"checking"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/accounts/{accountId}/deposit VIP",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"amount\": 500.00\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8588/api/accounts/67b40f2afdd8010f69b95a76/deposit",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8588",
+									"path": [
+										"api",
+										"accounts",
+										"67b40f2afdd8010f69b95a76",
+										"deposit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/accounts/{accountId}/withdraw VIP",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"amount\": 500.00\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8588/api/accounts/67b4153c065b460c3e58d90e/withdraw",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8588",
+									"path": [
+										"api",
+										"accounts",
+										"67b4153c065b460c3e58d90e",
+										"withdraw"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/accounts/customer/{customerId}/average-balance",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8588/api/accounts/customer/C001",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8588",
+									"path": [
+										"api",
+										"accounts",
+										"customer",
+										"C001"
 									]
 								}
 							},
@@ -745,6 +1113,166 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "api/credit-cards VISA",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"customerId\": \"CUST001\",\r\n    \"type\": \"VISA\",\r\n    \"creditLimit\": 5000.00\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8590/api/credit-cards",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8590",
+									"path": [
+										"api",
+										"credit-cards"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/credit-cards/{cardId}/consume",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n{\r\n    \"amount\": 100.50\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8590/api/credit-cards/ad5e1161-42ed-4aac-ba38-ee060153e136/consume",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8590",
+									"path": [
+										"api",
+										"credit-cards",
+										"ad5e1161-42ed-4aac-ba38-ee060153e136",
+										"consume"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/credit-cards/{cardId}/pay REALIZA PAGO",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"paymentAmount\": 50.25\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8590/api/credit-cards/ad5e1161-42ed-4aac-ba38-ee060153e136/pay",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8590",
+									"path": [
+										"api",
+										"credit-cards",
+										"ad5e1161-42ed-4aac-ba38-ee060153e136",
+										"pay"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/credit-cards/customer/CUST001/active SI ESTA ACTIVO",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerId\": \"12345\",\r\n  \"type\": \"PERSONAL\",\r\n  \"creditLimit\": 5000.00\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8590/api/credit-cards/customer/CUST001/active",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8590",
+									"path": [
+										"api",
+										"credit-cards",
+										"customer",
+										"CUST001",
+										"active"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/credit-cards/{cardId}/consumptions",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerId\": \"12345\",\r\n  \"type\": \"PERSONAL\",\r\n  \"creditLimit\": 5000.00\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8590/api/credit-cards/ad5e1161-42ed-4aac-ba38-ee060153e136/consumptions\n",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8590",
+									"path": [
+										"api",
+										"credit-cards",
+										"ad5e1161-42ed-4aac-ba38-ee060153e136",
+										"consumptions\n"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -934,6 +1462,129 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "api/transactions TRANSACCION REGULAR POSIBLE COMISION",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"accountId\": \"ACC12345\",\r\n  \"relatedEntityId\": \"REL98765\",\r\n  \"type\": \"DEPOSIT\",\r\n  \"amount\": 500.00\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8591/api/transactions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8591",
+									"path": [
+										"api",
+										"transactions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/transactions/transfer  Transferencia INTERNA",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"sourceAccountId\": \"ACC12345\",\r\n  \"destinationAccountId\": \"ACC67890\",\r\n  \"amount\": 250.00,\r\n  \"description\": \"Transferencia entre mis cuentas\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8591/api/transactions/transfer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8591",
+									"path": [
+										"api",
+										"transactions",
+										"transfer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/transactions/transfer  TERCEROS",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"sourceAccountId\": \"ACC12345\",\r\n  \"destinationAccountId\": \"ACC67890\",\r\n  \"amount\": 250.00,\r\n  \"description\": \"Transferencia entre mis cuentas\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8591/api/transactions/transfer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8591",
+									"path": [
+										"api",
+										"transactions",
+										"transfer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/transactions/transfer  TERCEROS Copy",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"sourceAccountId\": \"ACC12345\",\r\n  \"destinationAccountId\": \"ACC67890\",\r\n  \"amount\": 250.00,\r\n  \"description\": \"Transferencia entre mis cuentas\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8591/api/transactions/account/ACC12345",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8591",
+									"path": [
+										"api",
+										"transactions",
+										"account",
+										"ACC12345"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -1012,6 +1663,88 @@
 										"balances",
 										"consolidated",
 										"{customerId}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/balances/average-daily/{customerid} saldos promedios diarios",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8592/api/balances/average-daily/C001",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8592",
+									"path": [
+										"api",
+										"balances",
+										"average-daily",
+										"C001"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/balances/commissions/report",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8592/api/balances/commissions/report?startDate=2025-01-01&endDate=2025-02-19&productType=CREDIT_CARD",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8592",
+									"path": [
+										"api",
+										"balances",
+										"commissions",
+										"report"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2025-01-01"
+										},
+										{
+											"key": "endDate",
+											"value": "2025-02-19"
+										},
+										{
+											"key": "productType",
+											"value": "CREDIT_CARD"
+										}
 									]
 								}
 							},
